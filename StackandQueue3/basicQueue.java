@@ -12,10 +12,14 @@ public class basicQueue {
 		q.add(2);
 		q.add(5);
 		q.add(10);
-		
-		System.out.println(q.peek());
-		System.out.println(q.remove());
-		System.out.println(q.peek());
+		q.offer(15);
+		//System.out.println(q.size());
+		System.out.println(q.poll());
+		System.out.println(q.size());
+		q.remove();
+		System.out.println(q.size());
+		 int n = 0000111110;
+		 System.out.println(n);
 	}
 
 }
