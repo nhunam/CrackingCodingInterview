@@ -1,4 +1,4 @@
-package ArrayAndString;
+package ArrayAndString1;
 
 public class IsUnique11 {
 

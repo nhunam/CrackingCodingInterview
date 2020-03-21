@@ -1,5 +1,5 @@
 /* Leetcode 415 but the string can be decimal */
-package ArrayAndString;
+package ArrayAndString1;
 
 public class AddStrings2 {
 

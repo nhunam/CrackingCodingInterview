@@ -1,4 +1,4 @@
-package linkedlist;
+package LinkedList2;
 
 public class Node {
 	Node next = null;
@@ -7,7 +7,7 @@ public class Node {
 	public Node(int d) {
 		data = d;
 	}
-
+	
 	void appendToTail(int d) {
 		Node end = new Node(d);
 		Node n = this;
@@ -16,5 +16,4 @@ public class Node {
 		}
 		n.next = end;
 	}
-	
 }

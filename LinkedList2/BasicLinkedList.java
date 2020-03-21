@@ -1,5 +1,5 @@
-package linkedlist;
-import linkedlist.Node;
+package LinkedList2;
+import Node;
 
 public class BasicLinkedList {
 
