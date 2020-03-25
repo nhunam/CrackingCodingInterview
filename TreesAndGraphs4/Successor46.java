@@ -39,9 +39,54 @@ public class Successor46 {
 		if (n.right != null) {
 			return leftMostChild(n.right);
 		} else {
-			
+			TreeNode q = n;
+			TreeNode x = q.parent;
+			// Go up until we're on left instead of right
+			while (x != null && x.left != q) {
+				q = x;
+				x = x.parent;
+			}
+			return x;
 		}
 		
+	}
+	
+	TreeNode findNextPreorder(TreeNode n) {
+		// Pre-order: node, left, right
+		if(n == null) return null;
+		if(n.left != null) return n.left;
+		
+		TreeNode q = n;
+		TreeNode p = q.parent;
+		
+		while(p!= null && p.right == q) {
+			q = q.parent;
+			p = p.parent;
+		}
+		
+		// If we reach root, then the given node has no successor
+		if(p == null)
+			return null;
+		return p.right;
+	}
+	
+	TreeNode findNextPostOrder(TreeNode n) {
+		// Post-order: left, right, node
+		if(n == null) return null;
+		if(n.left != null) return n.left;
+		
+		TreeNode q = n;
+		TreeNode p = q.parent;
+		
+		while(p!= null && p.right == q) {
+			q = q.parent;
+			p = p.parent;
+		}
+		
+		// If we reach root, then the given node has no successor
+		if(p == null)
+			return null;
+		return p.right;
 	}
 	
 	TreeNode leftMostChild(TreeNode n) {
