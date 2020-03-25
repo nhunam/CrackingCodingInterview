@@ -6,7 +6,11 @@ public class CommonBitTasks {
 		// TODO Auto-generated method stub
 		int num = 1;
 		int i = 2;
-		System.out.println(num | i);
+		//System.out.println(num | i);
+		int allOne = ~0;
+		//System.out.println(allOne);
+		int j = 4;
+		System.out.println(Integer.toBinaryString(j));
 	}
 	
 	
