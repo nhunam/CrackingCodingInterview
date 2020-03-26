@@ -20,9 +20,13 @@ public class FlipBitoWin53 {
 		// TODO Auto-generated method stub
 		//System.out.println(Integer.BYTES * 8);
 		int a = 4;
+		System.out.println(Integer.toBinaryString(a));
 		System.out.println(a & 1);
-		a >>>=2;
-		System.out.println(a);
+		a >>>=1;
+		System.out.println(Integer.toBinaryString(a));
+		System.out.println(a & 1);
+		a >>>=1;
+		System.out.println(a & 1);
 		//System.out.println(flipBit(1775));
 	}
 	
