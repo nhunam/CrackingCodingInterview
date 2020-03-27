@@ -43,7 +43,7 @@ public class Conversion56 {
 	
 	// Solution 2:
 	// Each 1 in the XOR represents a bit that is different between A and B. Therefore, to check the number of bits
-	// that are different between A and B, we simply need to count the number of bits in AAB that are 1
+	// that are different between A and B, we simply need to count the number of bits in A ^ B that are 1
 	static int bitSwapRequired(int a, int b) {
 		int count = 0;
 		for (int c = a ^ b; c != 0; c = c >> 1) {

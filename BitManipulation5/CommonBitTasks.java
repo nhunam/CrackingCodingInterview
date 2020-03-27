@@ -10,7 +10,8 @@ public class CommonBitTasks {
 		int allOne = ~0;
 		//System.out.println(allOne);
 		int j = 4;
-		System.out.println(Integer.toBinaryString(j));
+		//System.out.println(Integer.toBinaryString(j));
+		System.out.println((byte)(~0));
 	}
 	
 	
