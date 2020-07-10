@@ -38,7 +38,7 @@ public class DecodeStringLC394 {
 		// TODO Auto-generated method stub
 		String s = "3[a2[c]]";
 		String s1 = "2[abc]3[cd]ef";
-		System.out.println(decodeString(s));
+		System.out.println(decodeString(s1));
 	}
 	
 	public static String decodeString(String s) {
@@ -56,16 +56,18 @@ public class DecodeStringLC394 {
         	if(Character.isAlphabetic(c))
         		sb.insert(0, c);
         	if(c == ']') {
-        		c = st.pop();
-	        	if (Character.isAlphabetic(c)) {
-	        		tmp.insert(0, c);
-	        	}
+        		while (c != '[') {
+        			c = st.pop();
+		        	if (Character.isAlphabetic(c)) {
+		        		tmp.insert(0, c);
+		        	}
+        		}
         	}
         	if (c == '[') {
         		c = st.pop();
 	        		if (Character.isDigit(c)) {
 	        		for (int i = 0; i < Character.getNumericValue(c) - 1; i++) {
-	        			sb.insert(0, tmp);
+	        			sb.insert(0, tmp.toString());
 	        		}
 	        	}
         	}
