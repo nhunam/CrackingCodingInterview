@@ -57,6 +57,7 @@ public class findAnagram {
         
         }
     }
+    //s.sub
         return list;
     }
 	
