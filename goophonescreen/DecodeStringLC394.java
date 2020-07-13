@@ -28,8 +28,6 @@ Output: "abccdcdcdxyz"
  */
 package goophonescreen;
 
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.Stack;
 
 public class DecodeStringLC394 {
