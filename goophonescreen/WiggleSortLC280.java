@@ -13,8 +13,9 @@ import java.util.Arrays;
 public class WiggleSortLC280 {
 
 	public static void main(String[] args) {
-		int[] nums = {3, 5, 2, 1, 6, 4};
-		wiggleSort(nums);
+		int[] nums = {3, 2, 5, 1, 0, 4, 6};
+		//wiggleSort(nums);
+		wiggleSortInPlace(nums);
 		System.out.println(Arrays.toString(nums));
 	}
 	
@@ -44,5 +45,18 @@ public class WiggleSortLC280 {
 				j++;
 			}
 		}
+	}
+	
+	public static void wiggleSortInPlace(int[] nums) {
+		if (nums.length < 2) return;
+		Arrays.sort(nums);
+		int i = 1;
+		for(; i < nums.length - 1; ) {
+			int x = nums[i];
+			nums[i] = nums[i+1];
+			nums[i+1] = x;
+			i +=2;
+		}
+		
 	}
 }
