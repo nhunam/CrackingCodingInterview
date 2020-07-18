@@ -37,6 +37,7 @@ package goophonescreen;
 public class UTF8ValidationLC393 {
 
 	public static void main(String[] args) {
+
 		int[] data = {235, 140, 4};
 		int[] data1 = {197, 130, 1};
 		System.out.println(validUtf8(data));
@@ -102,4 +103,7 @@ public class UTF8ValidationLC393 {
 		return false;
 	}
 
-}
+
+		// TODO Auto-generated method stub
+
+	}
