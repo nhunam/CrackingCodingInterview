@@ -37,19 +37,73 @@ package goophonescreen;
 public class UTF8ValidationLC393 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
+		int[] data = {235, 140, 4};
+		int[] data1 = {197, 130, 1};
+		System.out.println(validUtf8(data));
 
 	}
 	
-	public boolean validUtf8(int[] data) {
-		char[] s;
-		s = Integer.toBinaryString(data[0]).toCharArray();
-		int count = 0, i = 0;
-		while(s[i] != '0') {
-			count++;
-			i++;
+	// 0(n)
+	
+	public static boolean validUtf8(int[] data) {
+		if(data == null) return false;
+		int i  = 0;
+		//StringBuilder sb = new StringBuilder();
+		while (i < data.length) {
+			StringBuilder d0 = new StringBuilder(Integer.toBinaryString(data[i]));
+			if(d0.length() < 8) {
+				for (int j = 0; j < 8 - d0.length(); j++)
+					d0.insert(0, '0');
+			}
+			
+			//String d0 = d.toString();
+			
+			// Check numbers of appear of 1
+			if(d0.charAt(0) == '0')
+				i = i + 1;
+			else {
+				int countOne = 1;
+				int c = 1;
+				while (c < d0.length() && d0.charAt(c) == '1') {
+					countOne++;
+					c++;
+				}
+				if(countOne == 1) return false;
+				else if(countOne == 2) {
+					if(data.length < 2 || !check(data[i+1])) return false;
+					i = i+2;
+				}
+				else
+				if(countOne == 3) {
+					if(data.length < 3 || !check(data[i+1]) || !check(data[i+2])) return false;
+					i = i+3;
+				}
+				else
+				if(countOne == 4) {
+					if(data.length < 4 || !check(data[i+1]) || !check(data[i+2]) || !check(data[i+3])) return false;
+					i = i+4;
+				}
+				else
+				if(countOne > 4) return false;
+			}
 		}
-		if (count == data.length) return true;
-		return false;
+		
+		return true;
     }
-}
+	
+	static boolean check(int num) {
+		StringBuilder d = new StringBuilder(Integer.toBinaryString(num));
+		if(d.length() < 8) {
+			for (int j = 0; j < 8 - d.length(); j++)
+				d.insert(0, '0');
+		}
+		//String data = d.toString();
+		if (d.charAt(0)== '1' && d.charAt(1) == '0') return true;
+		return false;
+	}
+
+
+		// TODO Auto-generated method stub
+
+	}
